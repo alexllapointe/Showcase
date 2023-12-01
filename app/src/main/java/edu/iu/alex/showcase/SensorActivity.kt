@@ -54,7 +54,7 @@ class SensorActivity : ComponentActivity(), SensorEventListener {
 
 
     /*
-    *Check for permission to access location, if not then request it.
+    * Check for permission to access location, if not then request it.
     *
      */
     private val requestPermissionLauncher =
@@ -141,7 +141,7 @@ class SensorActivity : ComponentActivity(), SensorEventListener {
 
         Column(
             modifier = Modifier
-                .fillMaxSize() // Fill the maximum size of the parent
+                .fillMaxSize()
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

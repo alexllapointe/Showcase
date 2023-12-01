@@ -13,6 +13,11 @@ class GestureViewModel : ViewModel() {
         _gestureLogs.value = emptyList()
     }
 
+    /*
+    * Add gesture logs as live data. Used in gesture area when movement is detected.
+    *
+     */
+
     fun addGestureLog(log: String) {
         val currentLogs = _gestureLogs.value ?: emptyList()
         val updatedLogs = listOf(log) + currentLogs

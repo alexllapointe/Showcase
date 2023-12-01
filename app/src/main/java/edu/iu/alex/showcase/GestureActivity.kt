@@ -55,11 +55,19 @@ class GestureActivity : ComponentActivity() {
         }
     }
 
+    /*
+    * Detects when screen is in landscape mode to switch layout of the gesture area and logarea.
+    *
+     */
     private fun isLandscapeOrientation(context: Context): Boolean {
         val orientation = context.resources.configuration.orientation
         return orientation == Configuration.ORIENTATION_LANDSCAPE
     }
 
+    /*
+      * Renders GestureArea and log area in their respective places depending on screen orientation.
+      *
+       */
     @Composable
     fun GestureActivityContent() {
         val viewModel = viewModel<GestureViewModel>()
@@ -81,6 +89,15 @@ class GestureActivity : ComponentActivity() {
             }
         }
     }
+
+    /*
+    * Gesture Area where the ball is. Detects motion events as in up down left right.
+    *
+    * Communicates with view model to print movements to the screen using log area.
+    *
+    *
+    * @params: ViewModel: GestureViewModel, modifier: Modifier
+     */
 
     @OptIn(ExperimentalComposeUiApi::class)
     @Composable
@@ -138,13 +155,18 @@ class GestureActivity : ComponentActivity() {
         }
     }
 
-
+    /*
+    * Prints logs out to the screen as they appear in the view model using LazyColumn.
+    *
+    * @params: ViewModel: GestureViewModel, modifier: Modifier
+    *
+    *
+     */
     @Composable
     fun LogArea(viewModel: GestureViewModel, modifier: Modifier) {
         val logsState = viewModel.gestureLogs.observeAsState(initial = emptyList())
 
         val logs = logsState.value
-
 
         LazyColumn(
             modifier = modifier.fillMaxSize()

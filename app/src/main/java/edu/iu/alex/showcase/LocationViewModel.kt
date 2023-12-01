@@ -15,6 +15,10 @@ class LocationViewModel : ViewModel() {
     private val _temperatureData = MutableLiveData<Float>()
     val temperatureData: LiveData<Float> = _temperatureData
 
+    /*
+      * Below are all methods used to update live data for their respective sensors.
+      *
+       */
     fun updatePressureData(pressure: Float) {
         _pressureData.postValue("$pressure")
     }

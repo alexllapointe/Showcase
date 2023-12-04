@@ -25,6 +25,11 @@ The following **extensions** are implemented:
 
 Figuring out how to get both the gesture area and log area to work together was challenging.
 
+
+## Google Store Testing Link
+
+https://play.google.com/apps/test/edu.iu.alex.showcase/2
+
 ## License
 
     Copyright [2023] [Alex LaPointe]
